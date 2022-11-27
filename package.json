@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browsersync": "browser-sync start --server --startPath --files '*.html,*.css,*.js'",
+    "browsersync": "browser-sync start --server --files '*.html,*.css,*.js'",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "start": "npm-run-all --parallel browsersync tailwind",
     "test": "standard && vnu --skip-non-html --Werror *.html"
