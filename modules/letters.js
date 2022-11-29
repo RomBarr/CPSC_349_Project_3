@@ -7,7 +7,7 @@ function CreateLetters() {
     const button = document.createElement('button');
     button.textContent = letters[i];
     button.classList = 'btn btn-primary text-3xl';
-    document.getElementsByClassName('letters')[0].appendChild(button);
+    document.getElementById('letters').appendChild(button);
   } 
 }
 
