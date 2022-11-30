@@ -1,8 +1,7 @@
-import { Gallows } from './modules/canvas.js';
+import { changeStage } from './modules/stages.js';
 import { CreateLetters } from './modules/letters.js';
 
-const gallows = new Gallows('500', '500', document.getElementById('pic'));
-
-gallows.createGallows();
+changeStage(10);
 
 const letters = new CreateLetters();
+
