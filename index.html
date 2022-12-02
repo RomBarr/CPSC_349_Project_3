@@ -5,9 +5,9 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 <body>
-   <div id="Landing Page">
+   <div id="Landing-Page">
     <h1 id="Title" class=" text-8xl flex flex-wrap justify-center">Welcome to Hangman!</h1>
-    <h2 idk="buttons" class="flex flex-wrap justify-center grid grid-rows-1 grid-flowcol gap-4">
+    <h2 id="buttons" class="flex flex-wrap justify-center grid grid-rows-1 grid-flowcol gap-4">
       <button class="btn">Start</button>
       <button class="btn"> How to Play</button>
       <button class="btn">Credits</button>
@@ -15,12 +15,13 @@
   </div>
 
   <div id="page2">
-    <div id="game-image" class="flex justify-evenly">
-      <img id="stage"/>
-    </div>
+    <div class="flex justify-center space-y-10">
+      <img id="stage" src="/assets/images/hangman-blank.png" alt="Blank Hangman Stage Placeholder">
 
+      <table id="word-holder"></table>
+    </div>
     <div class="flex justify-center">
-      <div id="letters" class="flex flex-wrap justify-center items-end space-x-2 space-y-2 w-1/3"></div>
+      <div id="letters" class="flex flex-wrap justify-center items-end space-x-2 space-y-2 w-1/2"></div>
     </div>
   </div>
   <script type="module" src="main.js"></script>
