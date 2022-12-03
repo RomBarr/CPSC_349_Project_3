@@ -26,6 +26,11 @@ function createWordHolder (word) {
   for (let i = 0; i < word.length; ++i) {
     const cell = document.createElement('td')
     cell.classList = 'text-4xl w-10  border-b-4 border-indigo-500 text-center'
+
+    // if letter has been found and stored in local storage, set the cells
+    // textcontent to the letter
+    // code goes here
+
     row.appendChild(cell)
   }
 
@@ -36,7 +41,7 @@ function fillLetter (word, letter) {
   const cells = document.getElementsByTagName('td')
 
   let matchFound = false
-  
+
   // fill in a letter only if the word contains the letter
   for (let i = 0; i < word.length; ++i) {
     if (word[i] === letter) {
@@ -46,6 +51,15 @@ function fillLetter (word, letter) {
   }
 
   return matchFound
+}
+
+function saveStageAndWord() {
+  // save stage number 
+  // save found 
+}
+
+function loadSavedStageAndWord() {
+
 }
 
 export { createWordHolder, fillLetter, Stage }

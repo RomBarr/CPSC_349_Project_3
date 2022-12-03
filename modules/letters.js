@@ -11,6 +11,16 @@ function CreateLetters (word) {
     button.type = 'button'
     button.value = letters[i]
     button.classList = 'btn btn-primary text-3xl'
+
+    const btnIsDisabled = localStorage.getItem(button.value)
+    console.log("button " + letters[i] + " is " + btnIsDisabled)
+
+    // only change the button's disabled property if the button's disabled
+    // property value was saved in the local storage. 
+    if (btnIsDisabled !== null) {
+      button.disabled = btnIsDisabled
+    }
+
     document.getElementById('letters').appendChild(button)
     button.addEventListener('click', function () {
       if (!fillLetter(word, button.value)) {
@@ -18,6 +28,9 @@ function CreateLetters (word) {
       }
 
       button.disabled = true
+      
+      // save the button.disabled value into local storage
+      localStorage.setItem(button.value, button.disabled)
     })
   }
 }
