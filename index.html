@@ -5,16 +5,60 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 <body>
-   <div id="Landing-Page">
-    <h1 id="Title" class=" text-8xl flex flex-wrap justify-center">Welcome to Hangman!</h1>
-    <h2 id="buttons" class="flex flex-wrap justify-center grid grid-rows-1 grid-flowcol gap-4">
-      <button class="btn">Start</button>
-      <button class="btn"> How to Play</button>
-      <button class="btn">Credits</button>
-    </h2>
-  </div>
 
-  <div id="page2">
+
+<div id="landing page">
+    <header class= "bg-green-100 p-4">
+
+      <nav class=" container mx-auto flex flex-row justify-between items-center text-blue-700">
+       <div class="text-4xl">Welcome to hangman!</div>
+        <div>
+          <a class="link" href="#letters">Start</a>
+          <a class="link" href="#HowToPlay">How to Play</a>
+          <a class="link" href="#credits">Credits</a>
+       </div>
+
+      </nav>
+      </header>
+      <main class="bg-blue-100">
+        <div class="container mx-auto flex flex-row justify-between items-center py-20">
+          <div class="flex flex-col">
+            <h1>
+              Let's Play!
+            </h1>
+
+            <a class="btn w-max cursor-pointer" href="#letters">Start</a>
+           </div>
+        </div>
+
+        <div id="HowToPlay"class="container mx-auto">
+          <h2> How To Play</h2>
+          <p>
+            Step 1:Thibk of a word!<br>
+            Step 2:Guess and select a letter <br>
+            Step 3:Wait to see if the letter you guess is part of the word, if not watch your hang man grow! <br>
+            Step 4:Guess a different letter until your word is complete<br>
+            Step 6:See if you win or loose!<br>
+
+          </p>
+        </div>
+
+
+
+      </main>
+</div>
+
+
+
+
+
+
+
+  <div id="page2" class="bg-blue-100">
+
+    <h3 class="flex justify-center text-blue-700 "> Guess the word!
+  </h3>
+
     <div class="flex justify-center space-y-10">
       <img id="stage" src="/assets/images/hangman-blank.png" alt="Blank Hangman Stage Placeholder">
 
@@ -23,7 +67,19 @@
     <div class="flex justify-center">
       <div id="letters" class="flex flex-wrap justify-center items-end space-x-2 space-y-2 w-1/2"></div>
     </div>
+    <div id="credits"class="container mx-auto mx-15">
+          <h2>Credits</h2>
+          <p>
+            CPSC 349- Group 15<br>
+            Member 1:Roman Barron<br>
+            Member 2:Pedro Morales <br>
+            Member 3:Harrison Park<br>
+            Member 4:Andrea Aguirre<br>
+            </p>
+
+        </div>
   </div>
+
   <script type="module" src="main.js"></script>
 </body>
 </html>
