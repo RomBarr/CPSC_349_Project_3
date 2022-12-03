@@ -1,9 +1,14 @@
-import { changeStage, createWordHolder} from './modules/stages.js';
-import { CreateLetters } from './modules/letters.js';
+import { Stage, createWordHolder } from './modules/stages.js'
+import { CreateLetters } from './modules/letters.js'
 
-changeStage(10);
+const stage = new Stage()
 
-createWordHolder("computer");
+let word = 'computer'
 
-CreateLetters();
+word = word.toUpperCase()
 
+createWordHolder(word)
+
+CreateLetters(word)
+
+export { stage }

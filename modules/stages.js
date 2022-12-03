@@ -1,39 +1,51 @@
-function changeStage (stage) {
-  const img = document.getElementById('stage');
-  img.src = `/assets/images/hangman-${stage}.png`;
-  img.alt = `Stage ${stage} of Hangman`;
+class Stage {
+  constructor () {
+    this.num = 0
+  }
+
+  getStage () {
+    return this.num
+  }
+
+  changeStage (stage) {
+    const img = document.getElementById('stage')
+    img.src = `/assets/images/hangman-${stage}.png`
+    img.alt = `Stage ${stage} of Hangman`
+    this.num = stage
+  }
 }
 
 function createWordHolder (word) {
-  const table = document.getElementById('word-holder');
+  const table = document.getElementById('word-holder')
 
-  // create row 
-  const row = document.createElement('tr');
+  // create row
+  const row = document.createElement('tr')
 
-  row.classList = "flex space-x-5";
+  row.classList = 'flex space-x-5'
 
   for (let i = 0; i < word.length; ++i) {
-    const cell = document.createElement('td');
-    cell.classList = "text-4xl w-10  border-b-4 border-indigo-500 text-center";
-    row.appendChild(cell);
+    const cell = document.createElement('td')
+    cell.classList = 'text-4xl w-10  border-b-4 border-indigo-500 text-center'
+    row.appendChild(cell)
   }
 
-  table.appendChild(row);
+  table.appendChild(row)
 }
 
 function fillLetter (word, letter) {
-  const cells = document.getElementsByTagName('td'); 
+  const cells = document.getElementsByTagName('td')
+
+  let matchFound = false
   
   // fill in a letter only if the word contains the letter
-  // word[i] = cells[i]
+  for (let i = 0; i < word.length; ++i) {
+    if (word[i] === letter) {
+      cells[i].textContent = letter
+      matchFound = true
+    }
+  }
 
-  // if letter can be filled (match was found): 
-    cells[0].textContent = letter;
-    return true;
-  // else {
-  //   return false 
-  // }
-  
+  return matchFound
 }
 
-export { changeStage, createWordHolder, fillLetter };
+export { createWordHolder, fillLetter, Stage }
