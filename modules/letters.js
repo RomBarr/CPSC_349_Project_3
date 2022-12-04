@@ -1,6 +1,11 @@
 import { fillLetter } from './stages.js'
 import { stage } from '../main.js'
 
+// function getWord() {
+//   const words = ['ARRAY', 'ART','COMPUTER']
+//   return words[Math.floor(Math.random() * words.length)]
+// }
+
 function CreateLetters (word) {
   const alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
 
@@ -12,11 +17,10 @@ function CreateLetters (word) {
     button.value = letters[i]
     button.classList = 'btn btn-primary text-3xl'
 
-    const btnIsDisabled = localStorage.getItem(button.value)
-    console.log("button " + letters[i] + " is " + btnIsDisabled)
+    const btnIsDisabled = window.localStorage.getItem(button.value)
 
     // only change the button's disabled property if the button's disabled
-    // property value was saved in the local storage. 
+    // property value was saved in the local storage.
     if (btnIsDisabled !== null) {
       button.disabled = btnIsDisabled
     }
@@ -28,9 +32,9 @@ function CreateLetters (word) {
       }
 
       button.disabled = true
-      
+
       // save the button.disabled value into local storage
-      localStorage.setItem(button.value, button.disabled)
+      window.localStorage.setItem(button.value, button.disabled)
     })
   }
 }

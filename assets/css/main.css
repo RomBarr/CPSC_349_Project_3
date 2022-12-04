@@ -2344,7 +2344,6 @@ html {
   margin-right: auto;
 }
 
-<<<<<<< HEAD
 .my-60 {
   margin-top: 15rem;
   margin-bottom: 15rem;
@@ -2352,10 +2351,10 @@ html {
 
 .mt-12 {
   margin-top: 3rem;
-=======
+}
+
 .block {
   display: block;
->>>>>>> 1affae6a8e495309e49b86f8135ba092d48ad6ae
 }
 
 .flex {
@@ -2419,12 +2418,6 @@ html {
   justify-content: space-between;
 }
 
-.space-y-12 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
-}
-
 .space-x-16 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(4rem * var(--tw-space-x-reverse));
@@ -2447,6 +2440,12 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
 }
 
 .border-2 {

@@ -53,12 +53,12 @@ function fillLetter (word, letter) {
   return matchFound
 }
 
-function saveStageAndWord() {
-  // save stage number 
-  // save found 
+function saveStageAndWord () {
+  // save stage number
+  // save found
 }
 
-function loadSavedStageAndWord() {
+function loadSavedStageAndWord () {
 
 }
 
