@@ -1,3 +1,5 @@
+import { stage } from '../main.js'
+
 class Stage {
   constructor () {
     this.num = 0
@@ -15,7 +17,7 @@ class Stage {
   }
 }
 
-function createWordHolder (word) {
+function createWordHolder (word) {  
   const table = document.getElementById('word-holder')
 
   // create row
@@ -29,7 +31,11 @@ function createWordHolder (word) {
 
     // if letter has been found and stored in local storage, set the cells
     // textcontent to the letter
-    // code goes here
+    const showLetter = window.localStorage.getItem(`cell-${i}`)
+
+    if (showLetter !== null && showLetter) {
+      cell.textContent = word[i]
+    }
 
     row.appendChild(cell)
   }
@@ -47,6 +53,9 @@ function fillLetter (word, letter) {
     if (word[i] === letter) {
       cells[i].textContent = letter
       matchFound = true
+
+      // correct letter was found, save to local storage
+      window.localStorage.setItem(`cell-${i}`, true)
     }
   }
 
@@ -55,11 +64,7 @@ function fillLetter (word, letter) {
 
 function saveStageAndWord () {
   // save stage number
-  // save found
-}
-
-function loadSavedStageAndWord () {
-
+  window.localStorage.setItem('stage', stage.getStage())
 }
 
 export { createWordHolder, fillLetter, Stage }

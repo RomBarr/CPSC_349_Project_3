@@ -26,7 +26,7 @@ btn.addEventListener('click', function handleClick () {
   } else {
     page2.hidden = true
 
-    page2.style.display = 'none';
+    page2.style.display = 'none'
 
     btn.textContent = 'Lets Play'
   }
