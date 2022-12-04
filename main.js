@@ -47,7 +47,7 @@ const page2 = document.getElementById('page2')
 const btn = document.getElementById('btn')
 
 // Click "End Game"
-btn.addEventListener('click', function handleClick () {
+btn.addEventListener('click', function handleClick() {
   if (page2.hidden) {
     page2.style.display = 'block'
 
@@ -62,7 +62,7 @@ btn.addEventListener('click', function handleClick () {
     btn.textContent = 'Lets Play'
 
     console.log('deleting saved game')
-    
+
     deleteElements()
 
     stage.changeStage(0)
