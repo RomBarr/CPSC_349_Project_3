@@ -1,5 +1,5 @@
 import { fillLetter } from './stages.js'
-import { stage } from '../main.js'
+import { restart, stage } from '../main.js'
 
 function getWord () {
   const words = ['ARRAY', 'ART', 'COMPUTER', 'PENCIL', 'BEACH', 'BOOK', 'SOCCER', 'EVENT', 'PRANK', 'PUPPY', 'CLIMATE', 'SUBTRACTION',
@@ -37,6 +37,7 @@ function CreateLetters (word) {
         stage.changeStage(stage.getStage() + 1)
         if (stage.getStage() === 12) {
           gameLost(word)
+          window.localStorage.setItem('status', true) 
         }
         // save stage number
         window.localStorage.setItem('stage', stage.getStage())

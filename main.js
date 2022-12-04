@@ -1,21 +1,33 @@
 import { Stage, createWordHolder } from './modules/stages.js'
 import { CreateLetters, getWord } from './modules/letters.js'
 
-function deleteChildren(parent) {
+function deleteChildren (parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild)
   }
 }
 
-function deleteElements() {
-  // clear local storage 
+function deleteElements () {
+  // clear local storage
   window.localStorage.clear()
 
   // delete the word holder
   deleteChildren(document.getElementById('word-holder'))
 
-  // delete the letter buttons 
+  // delete the letter buttons
   deleteChildren(document.getElementById('letters'))
+}
+
+function restart() {
+  deleteElements()
+
+  stage.changeStage(0)
+
+  const word = getWord()
+
+  createWordHolder(word)
+
+  CreateLetters(word)
 }
 
 const stage = new Stage()
@@ -36,8 +48,6 @@ if (savedWord !== null) {
   word = getWord()
 }
 
-console.log('the word is ' + word)
-
 createWordHolder(word)
 
 CreateLetters(word)
@@ -54,6 +64,14 @@ btn.addEventListener('click', function handleClick () {
     btn.textContent = 'End Game'
 
     page2.hidden = false
+    
+    const savedStatus = window.localStorage.getItem('status')
+
+    if (savedStatus !== null && savedStatus) {
+      restart()
+      window.localStorage.setItem('status', false)
+    }
+
   } else {
     page2.hidden = true
 
@@ -61,20 +79,8 @@ btn.addEventListener('click', function handleClick () {
 
     btn.textContent = 'Lets Play'
 
-    console.log('deleting saved game')
-    
-    deleteElements()
-
-    stage.changeStage(0)
-
-    let word = getWord()
-
-    console.log('[reset] the word is ' + word)
-
-    createWordHolder(word)
-
-    CreateLetters(word)
+    restart()
   }
 })
 
-export { stage }
+export { stage, restart}

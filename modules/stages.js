@@ -1,3 +1,5 @@
+import { restart } from "../main.js"
+
 class Stage {
   constructor () {
     this.num = 0
@@ -53,16 +55,17 @@ function fillLetter (word, letter) {
 
       // correct letter was found, save to local storage
       window.localStorage.setItem(`cell-${i}`, true)
-      
+
       if (determineIfWon(cells, word)) {
         gameWon()
+        window.localStorage.setItem('status', true)
       }
     }
   }
   return matchFound
 }
 
-function determineIfWon(cells, word) {
+function determineIfWon (cells, word) {
   let match = true
 
   for (let i = 0; i < word.length; ++i) {
@@ -70,12 +73,11 @@ function determineIfWon(cells, word) {
       match = false
     }
   }
-  
+
   return match
 }
 
 function gameWon () {
-  console.log("game was won!")
   document.getElementById('letters').innerHTML = 'Congratulations You Won!!! '
 }
 
