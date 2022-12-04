@@ -11,23 +11,25 @@ createWordHolder(word)
 
 CreateLetters(word)
 
-export { stage }
+const page2 = document.getElementById('page2')
 
+const btn = document.getElementById('btn')
 
-const page2 = document.getElementById('page2');
+// Click "End Game"
+btn.addEventListener('click', function handleClick () {
+  if (page2.hidden) {
+    page2.style.display = 'block'
 
-const btn = document.getElementById('btn');
+    btn.textContent = 'End Game'
 
+    page2.hidden = false
+  } else {
+    page2.hidden = true
 
+    page2.style.display = 'none'
 
-btn.addEventListener('click', function handleClick() {
-  if (page2.style.display === 'none') {
-    page2.style.display = 'block';
-
-    btn.textContent = 'End Game';}
-   else {
-    page2.style.display = 'none';
-
-    btn.textContent = 'Lets Play';
+    btn.textContent = 'Lets Play'
   }
-});
+})
+
+export { stage }
