@@ -1,13 +1,13 @@
 class Stage {
-  constructor () {
+  constructor() {
     this.num = 0
   }
 
-  getStage () {
+  getStage() {
     return this.num
   }
 
-  changeStage (stage) {
+  changeStage(stage) {
     const img = document.getElementById('stage')
     img.src = `/assets/images/hangman-${stage}.png`
     img.alt = `Stage ${stage} of Hangman`
@@ -15,7 +15,7 @@ class Stage {
   }
 }
 
-function createWordHolder (word) {
+function createWordHolder(word) {
   const table = document.getElementById('word-holder')
 
   // create row
@@ -41,7 +41,7 @@ function createWordHolder (word) {
   table.appendChild(row)
 }
 
-function fillLetter (word, letter) {
+function fillLetter(word, letter) {
   const cells = document.getElementsByTagName('td')
 
   let matchFound = false
@@ -53,7 +53,7 @@ function fillLetter (word, letter) {
 
       // correct letter was found, save to local storage
       window.localStorage.setItem(`cell-${i}`, true)
-      
+
       if (determineIfWon(cells, word)) {
         gameWon()
       }
@@ -70,11 +70,11 @@ function determineIfWon(cells, word) {
       match = false
     }
   }
-  
+
   return match
 }
 
-function gameWon () {
+function gameWon() {
   console.log("game was won!")
   document.getElementById('letters').innerHTML = 'Congratulations You Won!!! '
 }
