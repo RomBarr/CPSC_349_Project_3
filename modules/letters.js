@@ -29,6 +29,9 @@ function CreateLetters (word) {
     button.addEventListener('click', function () {
       if (!fillLetter(word, button.value)) {
         stage.changeStage(stage.getStage() + 1)
+        if(stage.getStage() === 12) {
+          gameLost(word)
+        }
       }
 
       button.disabled = true
@@ -39,4 +42,8 @@ function CreateLetters (word) {
   }
 }
 
+function gameLost(word) {
+  document.getElementById('word-holder').innerHTML = ' You Lost!!!'
+  document.getElementById('letters').innerHTML = 'The answer was: ' + word
+}
 export { CreateLetters }
