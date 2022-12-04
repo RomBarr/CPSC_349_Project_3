@@ -45,7 +45,6 @@ function fillLetter (word, letter) {
   const cells = document.getElementsByTagName('td')
 
   let matchFound = false
-
   // fill in a letter only if the word contains the letter
   for (let i = 0; i < word.length; ++i) {
     if (word[i] === letter) {
@@ -59,9 +58,8 @@ function fillLetter (word, letter) {
         gameWon()
       }
     }
-
-  return matchFound
   }
+  return matchFound
 }
 
 function determineIfWon(cells, word) {
@@ -72,6 +70,7 @@ function determineIfWon(cells, word) {
       match = false
     }
   }
+  
   return match
 }
 

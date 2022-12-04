@@ -38,6 +38,8 @@ function CreateLetters (word) {
         if (stage.getStage() === 12) {
           gameLost(word)
         }
+        // save stage number
+        window.localStorage.setItem('stage', stage.getStage())
       }
 
       button.disabled = true
@@ -51,6 +53,5 @@ function CreateLetters (word) {
 function gameLost (word) {
   document.getElementById('word-holder').innerHTML = ' You Lost!!!'
   document.getElementById('letters').innerHTML = 'The answer was: ' + word
-  window.localStorage.clear()
 }
 export { CreateLetters, getWord }
