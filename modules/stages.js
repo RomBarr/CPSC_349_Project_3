@@ -62,9 +62,4 @@ function fillLetter (word, letter) {
   return matchFound
 }
 
-function saveStageAndWord () {
-  // save stage number
-  window.localStorage.setItem('stage', stage.getStage())
-}
-
 export { createWordHolder, fillLetter, Stage }

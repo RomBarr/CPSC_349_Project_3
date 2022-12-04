@@ -3,6 +3,13 @@ import { CreateLetters } from './modules/letters.js'
 
 const stage = new Stage()
 
+const savedStage = window.localStorage.getItem('stage')
+
+if (savedStage !== null) {
+  console.log("the saved stage is " + savedStage)
+  stage.changeStage(parseInt(savedStage))
+}
+
 let word = 'computer'
 
 word = word.toUpperCase()
@@ -29,6 +36,8 @@ btn.addEventListener('click', function handleClick () {
     page2.style.display = 'none'
 
     btn.textContent = 'Lets Play'
+
+    console.log("deleting saved game")
   }
 })
 
