@@ -1,15 +1,15 @@
 import { restart } from "../main.js"
 
 class Stage {
-  constructor () {
+  constructor() {
     this.num = 0
   }
 
-  getStage () {
+  getStage() {
     return this.num
   }
 
-  changeStage (stage) {
+  changeStage(stage) {
     const img = document.getElementById('stage')
     img.src = `/assets/images/hangman-${stage}.png`
     img.alt = `Stage ${stage} of Hangman`
@@ -17,7 +17,7 @@ class Stage {
   }
 }
 
-function createWordHolder (word) {
+function createWordHolder(word) {
   const table = document.getElementById('word-holder')
 
   // create row
@@ -43,7 +43,7 @@ function createWordHolder (word) {
   table.appendChild(row)
 }
 
-function fillLetter (word, letter) {
+function fillLetter(word, letter) {
   const cells = document.getElementsByTagName('td')
 
   let matchFound = false

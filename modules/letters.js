@@ -1,7 +1,7 @@
 import { fillLetter } from './stages.js'
 import { restart, stage } from '../main.js'
 
-function getWord () {
+function getWord() {
   const words = ['ARRAY', 'ART', 'COMPUTER', 'PENCIL', 'BEACH', 'BOOK', 'SOCCER', 'EVENT', 'PRANK', 'PUPPY', 'CLIMATE', 'SUBTRACTION',
     'MOBILE', 'FOOD', 'BACKPACK', 'CANDY', 'SANDWICH', 'MAKEUP', 'WIPES', 'AIRPLANE', 'TAXI', 'BUS', 'BEAR', 'PAW', 'WOODS', 'FOREST', 'PHONE']
 
@@ -12,7 +12,7 @@ function getWord () {
   return word
 }
 
-function CreateLetters (word) {
+function CreateLetters(word) {
   const alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
 
   const letters = alphabet.split(' ')
@@ -51,8 +51,19 @@ function CreateLetters (word) {
   }
 }
 
-function gameLost (word) {
+function gameLost(word) {
   document.getElementById('word-holder').innerHTML = ' You Lost!!!'
   document.getElementById('letters').innerHTML = 'The answer was: ' + word
+  let letterButtons = document.querySelectorAll("letters")
+
+  letterButtons.forEach((button) => {
+    button.disabled = true
+  });
+  deleteElements()
+  stage.changeStage(0)
+  word = getWord()
+  createWordHolder(word)
+  CreateLetters(word)
 }
+
 export { CreateLetters, getWord }
