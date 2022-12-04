@@ -58,10 +58,11 @@ function fillLetter (word, letter) {
       window.localStorage.setItem(`cell-${i}`, true)
       if(cells[i] === word[i]) {
         gameWon()
+      }
     }
-  }
 
   return matchFound
+  }
 }
   
 function gameWon() {
