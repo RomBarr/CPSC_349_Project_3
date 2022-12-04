@@ -1,10 +1,13 @@
 import { fillLetter } from './stages.js'
 import { stage } from '../main.js'
 
-// function getWord() {
-//   const words = ['ARRAY', 'ART','COMPUTER']
-//   return words[Math.floor(Math.random() * words.length)]
-// }
+// // function getWord() {
+// //   const words = ['ARRAY', 'ART','COMPUTER']
+//      const word = words[Math.floor(Math.random() * words.length)]
+//     window.localStorage.setItem('word', word)
+
+//     return word 
+// // }
 
 function CreateLetters (word) {
   const alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
@@ -29,6 +32,9 @@ function CreateLetters (word) {
     button.addEventListener('click', function () {
       if (!fillLetter(word, button.value)) {
         stage.changeStage(stage.getStage() + 1)
+        // save stage number
+        console.log("now saving " + stage.getStage())
+        window.localStorage.setItem('stage', stage.getStage())
       }
 
       button.disabled = true
