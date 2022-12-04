@@ -1,10 +1,11 @@
 import { fillLetter } from './stages.js'
 import { stage } from '../main.js'
 
-// function getWord() {
-//   const words = ['ARRAY', 'ART','COMPUTER']
-//   return words[Math.floor(Math.random() * words.length)]
-// }
+function getWord() {
+const words = ['ARRAY', 'ART','COMPUTER', 'PENCIL','BEACH', 'BOOK', 'SOCCER', 'EVENT', 'PRANK', 'PUPPY','CLIMATE', 'SUBTRACTION',
+'MOBILE','FOOD','BACKPACK', 'CANDY','SANDWICH', 'MAKEUP','WIPES','AIRPLANE','TAXI', 'BUS','BEAR','PAW','WOODS','FOREST']
+return words[Math.floor(Math.random() * words.length)]
+}
 
 function CreateLetters (word) {
   const alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
