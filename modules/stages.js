@@ -59,9 +59,9 @@ function fillLetter (word, letter) {
         gameWon()
       }
     }
-  }
 
   return matchFound
+  }
 }
 
 function determineIfWon(cells, word) {
