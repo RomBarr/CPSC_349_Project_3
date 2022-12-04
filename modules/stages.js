@@ -56,10 +56,16 @@ function fillLetter (word, letter) {
 
       // correct letter was found, save to local storage
       window.localStorage.setItem(`cell-${i}`, true)
+      if(cells[i] === word[i]) {
+        gameWon()
     }
   }
 
   return matchFound
+}
+  
+function gameWon() {
+  document.getElementById('letters').innerHTML = 'Congratulations You Won!!! '
 }
 
 export { createWordHolder, fillLetter, Stage }
